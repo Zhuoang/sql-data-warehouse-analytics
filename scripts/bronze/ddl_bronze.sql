@@ -41,20 +41,20 @@ CREATE TABLE bronze.crm_sales_details(
 );
 GO
 
-CREATE TABLE bronze.erp_LOC_A101(
+CREATE TABLE bronze.erp_loc_z101(
     CID VARCHAR(50) PRIMARY KEY,
     CNTRY VARCHAR(100)
 );
 GO
 
-CREATE TABLE bronze.erp_CUST_AZ12(
+CREATE TABLE bronze.erp_cust_az12(
     CID VARCHAR(50) PRIMARY KEY,
     BDATE DATE,
     GENDER VARCHAR(10)
 );
 GO
 
-CREATE TABLE bronze.erp_PX_CAT_G1V2(
+CREATE TABLE bronze.erp_px_cat_g1v2(
     ID VARCHAR(10) PRIMARY KEY,
     CAT VARCHAR(50),
     SUBCAT VARCHAR(50),
