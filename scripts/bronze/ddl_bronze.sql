@@ -2,9 +2,12 @@
 ===============================================================================
 DDL Script: Create Bronze Tables
 ===============================================================================
-Script Purpose: This script creates tables in the 'bronze' schema.
+Script Purpose: 
+    This script creates tables in the 'bronze' schema, dropping existing tables if they already exist.
 ===============================================================================
 */
+IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_cust_info;
 
 CREATE TABLE bronze.crm_cust_info(
     cst_id INT PRIMARY KEY,
@@ -17,6 +20,9 @@ CREATE TABLE bronze.crm_cust_info(
 );
 GO
 
+IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_prd_info;
+
 CREATE TABLE bronze.crm_prd_info(
     prd_id INT PRIMARY KEY,
     prd_key VARCHAR(50) NOT NULL,
@@ -27,6 +33,9 @@ CREATE TABLE bronze.crm_prd_info(
     prd_end_dt DATE
 );
 GO
+
+IF OBJECT_ID('bronze.crm_sales_details', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_sales_details;
 
 CREATE TABLE bronze.crm_sales_details(
     sls_ord_num VARCHAR(50) PRIMARY KEY,
@@ -41,11 +50,17 @@ CREATE TABLE bronze.crm_sales_details(
 );
 GO
 
+IF OBJECT_ID('bronze.erp_loc_z101', 'U') IS NOT NULL
+    DROP TABLE bronze.erp_loc_z101;
+
 CREATE TABLE bronze.erp_loc_z101(
     CID VARCHAR(50) PRIMARY KEY,
     CNTRY VARCHAR(100)
 );
 GO
+
+IF OBJECT_ID('bronze.erp_cust_az12', 'U') IS NOT NULL
+    DROP TABLE bronze.erp_cust_az12;
 
 CREATE TABLE bronze.erp_cust_az12(
     CID VARCHAR(50) PRIMARY KEY,
@@ -53,6 +68,9 @@ CREATE TABLE bronze.erp_cust_az12(
     GENDER VARCHAR(10)
 );
 GO
+
+IF OBJECT_ID('bronze.erp_px_cat_g1v2', 'U') IS NOT NULL
+    DROP TABLE bronze.erp_px_cat_g1v2;
 
 CREATE TABLE bronze.erp_px_cat_g1v2(
     ID VARCHAR(10) PRIMARY KEY,
