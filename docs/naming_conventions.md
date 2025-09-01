@@ -4,15 +4,15 @@ This document outlines the naming conventions used for schemas, tables, views, c
 
 ## **Table of Contents**
 
-1. General Principles
-2. Table Naming Conventions
-    - Bronze Rules
-    - Silver Rules
-    - Gold Rules
-3. Column Naming Conventions
-    - Surrogate Keys
-    - Technical Columns
-4. Stored Procedure
+1. [General Principles](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#general-principles)
+2. [Table Naming Conventions](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#table-naming-conventions)
+    - [Bronze Rules](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#bronze-rules)
+    - [Silver Rules](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#silver-rules)
+    - [Gold Rules](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#gold-rules)
+3. [Column Naming Conventions](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#column-naming-conventions)
+    - [Surrogate Keys](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#surrogate-keys)
+    - [Technical Columns](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#technical-columns)
+4. [Stored Procedure](https://github.com/Zhuoang/sql-data-warehouse-project/blob/main/docs/naming_conventions.md#stored-procedure)
 
 ---
 
