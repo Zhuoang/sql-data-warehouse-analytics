@@ -74,6 +74,10 @@ BEGIN
         PRINT '>> Load Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' seconds';
         PRINT '-------------------';
 
+        PRINT '---------------------------------------------------';
+        PRINT 'Loading CRM Tables';
+        PRINT '---------------------------------------------------';
+
         SET @start_time = GETDATE();
         PRINT '>> Truncating Table: bronze.erp_cust_az12';
         TRUNCATE TABLE bronze.erp_cust_az12;
