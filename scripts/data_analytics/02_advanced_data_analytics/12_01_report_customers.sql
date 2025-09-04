@@ -32,7 +32,7 @@ CREATE VIEW gold.report_customers AS
 
 WITH base_query AS (
     /*---------------------------------------------------------------------------
-    1) Base Query: Retrieves core columns from tables
+     1) Base Query: Retrieves core columns from tables
     ---------------------------------------------------------------------------*/
     SELECT
 		s.order_number,
@@ -51,7 +51,7 @@ WITH base_query AS (
     ),
 customer_aggregation AS (
     /*---------------------------------------------------------------------------
-    2) Customer Aggregation: Summarizes key metrics at the customer level
+     2) Customer Aggregation: Summarizes key metrics at the customer level
     ---------------------------------------------------------------------------*/
     SELECT
         customer_key,
@@ -72,7 +72,7 @@ customer_aggregation AS (
         age
     )
 /*---------------------------------------------------------------------------
-3) KPIs Calculations: Derives additional metrics and segments customers
+ 3) KPIs Calculations: Derives additional metrics and segments customers
 ---------------------------------------------------------------------------*/
 SELECT
     customer_key,
