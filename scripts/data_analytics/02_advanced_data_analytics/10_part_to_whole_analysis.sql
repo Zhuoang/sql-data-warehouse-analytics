@@ -14,18 +14,14 @@ SQL Functions Used:
 */
 
 -- Category Sales Percentage Analysis
-WITH
-    cat_sales
-    AS
-    
-    (
-        SELECT
-            p.category,
-            SUM(f.sales_amount) AS total_cat_sales
-        FROM gold.fact_sales f
-            LEFT JOIN gold.dim_products p
-            ON f.product_key = p.product_key
-        GROUP BY p.category
+WITH cat_sales AS (
+    SELECT
+        p.category,
+        SUM(f.sales_amount) AS total_cat_sales
+    FROM gold.fact_sales f
+    LEFT JOIN gold.dim_products p
+        ON f.product_key = p.product_key
+    GROUP BY p.category
     )
 SELECT
     category,
@@ -36,18 +32,14 @@ FROM cat_sales
 ORDER BY total_cat_sales DESC;
 
 -- Category Orders Percentage Analysis
-WITH
-    cat_orders
-    AS
-    
-    (
-        SELECT
-            p.category,
-            COUNT(f.order_number) AS total_cat_orders
-        FROM gold.fact_sales f
-            LEFT JOIN gold.dim_products p
-            ON f.product_key = p.product_key
-        GROUP BY p.category
+WITH cat_orders AS (
+    SELECT
+        p.category,
+        COUNT(f.order_number) AS total_cat_orders
+    FROM gold.fact_sales f
+    LEFT JOIN gold.dim_products p
+        ON f.product_key = p.product_key
+    GROUP BY p.category
     )
 SELECT
     category,
