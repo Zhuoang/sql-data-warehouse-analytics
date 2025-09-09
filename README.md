@@ -1,6 +1,6 @@
 # **SQL Data Warehouse & Analytics**
 
-This project demonstrates the end-to-end workflow expected in Data Analyst and BI Analyst roles, showcasing both data warehousing and analytics. It includes building a SQL Server data warehouse (Bronze, Silver, Gold layers) from raw ERP/CRM data and developing SQL-based exploratory analysis, advanced analytics, and customer/product reports.
+This project demonstrates the end-to-end workflow expected in **Data Analyst** and **BI Analyst** roles, showcasing both data warehousing and analytics. It includes building a SQL Server data warehouse (Bronze, Silver, Gold layers) from raw ERP/CRM data and developing SQL-based exploratory analysis, advanced analytics, and customer/product reports.
 
 ---
 
