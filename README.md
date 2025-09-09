@@ -84,7 +84,7 @@ Run the initialization script to create the `sales_dw` database and base schema:
 
 Execute the stored procedure to load raw ERP and CRM data into the Bronze layer:
 
-```
+```sql
 EXEC proc_load_bronze;
 ```
 
@@ -92,7 +92,7 @@ EXEC proc_load_bronze;
 
 Clean and standardize the Bronze data by running:
 
-```
+```sql
 EXEC proc_load_silver;
 ```
 
@@ -100,7 +100,7 @@ EXEC proc_load_silver;
 
 Aggregate and model the Silver data into a star schema for analytics:
 
-```
+```sql
 EXEC proc_load_gold;
 ```
 
@@ -108,7 +108,7 @@ EXEC proc_load_gold;
 
 Query the Gold layer to confirm the warehouse is ready:
 
-```
+```sql
 SELECT TOP 10 * FROM gold.dim_customers;
 SELECT TOP 10 * FROM gold.dim_products;
 SELECT TOP 10 * FROM gold.fact_sales;
