@@ -52,7 +52,7 @@ Build a modern data warehouse in SQL Server to consolidate sales data, providing
 - **Scope**: Limit to the latest dataset; historical data is excluded from this project’s scope.
 - **Documentation**: Provide clear, well-structured documentation of the data model for both business stakeholders and analytics teams.
 
-------
+---
 
 ### **BI: Analytics & Reporting (Data Analysis)**
 
@@ -116,6 +116,8 @@ SELECT TOP 10 * FROM gold.fact_sales;
 
 After completing these steps, you will have a fully functional **Medallion Data Warehouse** (Bronze → Silver → Gold) ready for analysis.
 
+---
+
 ## 📊 Reports
 
 The final outputs from the Gold layer are exported as CSV reports for easy review:
@@ -142,7 +144,7 @@ The final outputs from the Gold layer are exported as CSV reports for easy revie
 
 These reports demonstrate how the warehouse delivers actionable insights on **customer behaviour** and **product performance** directly from SQL-based analytics.
 
-------
+---
 
 ## 📂 Repository Structure
 ```
