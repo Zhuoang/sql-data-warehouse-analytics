@@ -120,25 +120,25 @@ After completing these steps, you will have a fully functional **Medallion Data 
 
 The final outputs from the Gold layer are exported as CSV reports for easy review:
 
-- **Customer Report** (`reports/report_customers.csv`)   Contains customer demographics, segmentation, and sales performance metrics.   *(Only a sample of columns is shown below; see the CSV file for full details.)*
+- [**Customer Report**] (`reports/report_customers.csv`)   Contains customer demographics, segmentation, and sales performance metrics.   *(Check the CSV file for full details.)*
   
   Example:
   
-  | customer_key | customer_name | age  | customer_segment | total_sales | total_orders |
-  | ------------ | ------------- | ---- | ---------------- | ----------- | ------------ |
-  | 2            | Jon Yang      | 54   | VIP              | 8249        | 3            |
-  | 3            | Eugene Huang  | 49   | VIP              | 6384        | 3            |
+  | **customer_key** | **customer_number** | **customer_name** | **age** | **age_group** | **customer_segment** | **total_sales** | **total_orders** | **total_quantity** | **total_products** | **last_order** | **recency** | **lifespan** | **avg_order_value** | **avg_monthly_sales** |
+  | ---------------- | ------------------- | ----------------- | ------- | ------------- | -------------------- | --------------- | ---------------- | ------------------ | ------------------ | -------------- | ----------- | ------------ | ------------------- | --------------------- |
+  | **2**            | AW00011000          | Jon Yang          | 54      | 50-64         | VIP                  | 8249            | 3                | 8                  | 8                  | 2013-05-03     | 148         | 28           | 2749                | 294                   |
+  | **3**            | AW00011001          | Eugene Huang      | 49      | 36-49         | VIP                  | 6384            | 3                | 11                 | 10                 | 2013-12-10     | 141         | 35           | 2128                | 182                   |
 
 ---
 
-- **Product Report** (`reports/report_products.csv`)   Summarizes product performance by category and subcategory, including revenue and quantity sold.  *(Only a sample of columns is shown below; see the CSV file for full details.)*
+- [**Product Report**] (`reports/report_products.csv`)   Summarizes product performance by category and subcategory, including revenue and quantity sold.  *(Check the CSV file for full details.)*
   
   Example:
   
-  | product_key | product_name           | category | subcategory    | total_sales | total_quantity_sold |
-  | ----------- | ---------------------- | -------- | -------------- | ----------- | ------------------- |
-  | 3           | Mountain-100 Black- 38 | Bikes    | Mountain Bikes | 165375      | 49                  |
-  | 4           | Mountain-100 Black- 42 | Bikes    | Mountain Bikes | 151875      | 45                  |
+  | **product_key** | **product_name**       | **category** | **subcategory** | **cost** | **lifespan** | **last_order** | **recency** | **performance** | **total_sales** | **total_quantity_sold** | **total_orders** | **total_customers** | **avg_selling_price** | **avg_order_revenue** | **avg_monthly_revenue** |
+  | --------------- | ---------------------- | ------------ | --------------- | -------- | ------------ | -------------- | ----------- | --------------- | --------------- | ----------------------- | ---------------- | ------------------- | --------------------- | --------------------- | ----------------------- |
+  | **3**           | Mountain-100 Black- 38 | Bikes        | Mountain Bikes  | 1898     | 11           | 2011-12-27     | 165         | Mid-Range       | 165375          | 49                      | 49               | 49                  | 3375                  | 3375                  | 15034                   |
+  | **4**           | Mountain-100 Black- 42 | Bikes        | Mountain Bikes  | 1898     | 11           | 2011-12-27     | 165         | Mid-Range       | 151875          | 45                      | 45               | 45                  | 3375                  | 3375                  | 13806                   |
 
 These reports demonstrate how the warehouse delivers actionable insights on **customer behaviour** and **product performance** directly from SQL-based analytics.
 
