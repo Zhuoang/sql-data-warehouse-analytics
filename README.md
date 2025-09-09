@@ -120,7 +120,7 @@ After completing these steps, you will have a fully functional **Medallion Data 
 
 The final outputs from the Gold layer are exported as CSV reports for easy review:
 
-- [**Customer Report**] (`reports/report_customers.csv`)   Contains customer demographics, segmentation, and sales performance metrics.   *(Check the CSV file for full details.)*
+- **[Customer Report](reports/report_customers.csv)**: Contains customer demographics, segmentation, and sales performance metrics.   *(Check the CSV file for full details.)*
   
   Example:
   
@@ -131,7 +131,7 @@ The final outputs from the Gold layer are exported as CSV reports for easy revie
 
 ---
 
-- [**Product Report**] (`reports/report_products.csv`)   Summarizes product performance by category and subcategory, including revenue and quantity sold.  *(Check the CSV file for full details.)*
+- **[Product Report](reports/report_products.csv)**: Summarizes product performance by category and subcategory, including revenue and quantity sold.  *(Check the CSV file for full details.)*
   
   Example:
   
