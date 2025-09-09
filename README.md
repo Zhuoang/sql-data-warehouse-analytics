@@ -65,3 +65,91 @@ Develop SQL-based analytics that provide detailed insights into:
 - **Sales Trends**
 
 These insights will equip stakeholders with key business metrics to support strategic decision-making.
+
+---
+
+## ⚡ Getting Started
+
+Follow these steps to set up and run the project in your local SQL Server environment.
+
+##### 1. Create the Database
+
+Run the initialization script to create the `sales_dw` database and base schema:
+
+```sql
+:r scripts/init_database.sql
+```
+
+##### **2. Load the Bronze Layer**
+
+Execute the stored procedure to load raw ERP and CRM data into the Bronze layer:
+
+```
+EXEC proc_load_bronze;
+```
+
+##### **3. Transform to the Silver Layer**
+
+Clean and standardize the Bronze data by running:
+
+```
+EXEC proc_load_silver;
+```
+
+##### **4. Build the Gold Layer**
+
+Aggregate and model the Silver data into a star schema for analytics:
+
+```
+EXEC proc_load_gold;
+```
+
+##### **5. Verify the Results**
+
+Query the Gold layer to confirm the warehouse is ready:
+
+```
+SELECT TOP 10 * FROM gold.dim_customers;
+SELECT TOP 10 * FROM gold.dim_products;
+SELECT TOP 10 * FROM gold.fact_sales;
+```
+
+After completing these steps, you will have a fully functional **Medallion Data Warehouse** (Bronze → Silver → Gold) ready for analysis.
+
+------
+
+## 📂 Repository Structure
+```
+data-warehouse-project/
+│
+├── datasets/                           # Raw datasets (ERP and CRM data in CSV format)
+│   ├── source_crm/                     # CRM source data
+│   └── source_erp/                     # ERP source data
+│
+├── docs/                               # Documentation and architecture diagrams
+│   ├── 01_data_architecture.png        # Medallion architecture diagram
+│   ├── 02_naming_conventions.md        # Naming guidelines for tables, columns, and files
+│   ├── 03_data_flow.png                # Data flow diagram
+│   ├── 04_data_integration.png         # Data integration overview
+│   ├── 05_data_model.png               # Data model (star schema) diagram
+│   └── 06_data_catalog.md              # Dataset catalog with field descriptions
+│
+├── scripts/                            # SQL scripts for ETL and analytics
+│   ├── data_analytics/                 # SQL-based analytics and reporting
+│   │   ├── 01_exploratory_data_analysis/   # Exploratory data analysis queries
+│   │   └── 02_advanced_data_analysis/      # Advanced analytics and business reports
+│   │
+│   ├── layers/                        # ETL pipeline scripts following Medallion architecture
+│   │   ├── 01_bronze/                 # Raw data ingestion
+│   │   ├── 02_silver/                 # Data cleaning and standardization
+│   │   └── 03_gold/                   # Star schema modeling for analytics
+│   └── init_database.sql              # Script to initialize the database schema
+│
+├── tests/                              # SQL scripts for data quality checks
+│   ├── 01_quality_checks_silver.sql    # Validations for Silver layer data
+│   └── 02_quality_checks_gold.sql      # Validations for Gold layer data
+│
+├── README.md                           # Project overview and instructions
+├── LICENSE                             # License information
+└── .gitignore                          # Files and directories to ignore in Git
+```
