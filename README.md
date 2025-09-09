@@ -116,6 +116,32 @@ SELECT TOP 10 * FROM gold.fact_sales;
 
 After completing these steps, you will have a fully functional **Medallion Data Warehouse** (Bronze → Silver → Gold) ready for analysis.
 
+## 📊 Reports
+
+The final outputs from the Gold layer are exported as CSV reports for easy review:
+
+- **Customer Report** (`reports/report_customers.csv`)   Contains customer demographics, segmentation, and sales performance metrics.   *(Only a sample of columns is shown below; see the CSV file for full details.)*
+  
+  Example:
+  
+  | customer_key | customer_name | age  | customer_segment | total_sales | total_orders |
+  | ------------ | ------------- | ---- | ---------------- | ----------- | ------------ |
+  | 2            | Jon Yang      | 54   | VIP              | 8249        | 3            |
+  | 3            | Eugene Huang  | 49   | VIP              | 6384        | 3            |
+
+---
+
+- **Product Report** (`reports/report_products.csv`)   Summarizes product performance by category and subcategory, including revenue and quantity sold.  *(Only a sample of columns is shown below; see the CSV file for full details.)*
+  
+  Example:
+  
+  | product_key | product_name           | category | subcategory    | total_sales | total_quantity_sold |
+  | ----------- | ---------------------- | -------- | -------------- | ----------- | ------------------- |
+  | 3           | Mountain-100 Black- 38 | Bikes    | Mountain Bikes | 165375      | 49                  |
+  | 4           | Mountain-100 Black- 42 | Bikes    | Mountain Bikes | 151875      | 45                  |
+
+These reports demonstrate how the warehouse delivers actionable insights on **customer behaviour** and **product performance** directly from SQL-based analytics.
+
 ------
 
 ## 📂 Repository Structure
@@ -134,16 +160,20 @@ data-warehouse-project/
 │   ├── 05_data_model.png               # Data model (star schema) diagram
 │   └── 06_data_catalog.md              # Dataset catalog with field descriptions
 │
+├── results/                            # Final reports exported from the Gold layer
+│   ├── report_customers.csv            # Customer report with demographics and sales metrics
+│   └── report_products.csv             # Product report with category performance and revenue
+│
 ├── scripts/                            # SQL scripts for ETL and analytics
 │   ├── data_analytics/                 # SQL-based analytics and reporting
 │   │   ├── 01_exploratory_data_analysis/   # Exploratory data analysis queries
 │   │   └── 02_advanced_data_analysis/      # Advanced analytics and business reports
 │   │
-│   ├── layers/                        # ETL pipeline scripts following Medallion architecture
-│   │   ├── 01_bronze/                 # Raw data ingestion
-│   │   ├── 02_silver/                 # Data cleaning and standardization
-│   │   └── 03_gold/                   # Star schema modeling for analytics
-│   └── init_database.sql              # Script to initialize the database schema
+│   ├── layers/                         # ETL pipeline scripts following Medallion architecture
+│   │   ├── 01_bronze/                  # Raw data ingestion
+│   │   ├── 02_silver/                  # Data cleaning and standardization
+│   │   └── 03_gold/                    # Star schema modeling for analytics
+│   └── init_database.sql               # Script to initialize the database schema
 │
 ├── tests/                              # SQL scripts for data quality checks
 │   ├── 01_quality_checks_silver.sql    # Validations for Silver layer data
