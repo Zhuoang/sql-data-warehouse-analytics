@@ -137,10 +137,6 @@ The final outputs from the Gold layer are exported as CSV reports for easy revie
   
   Example:
   
-  | **product_key** | **product_name**       | **category** | **subcategory** | **cost** | **lifespan** | **last_order** | **recency** | **performance** | **total_sales** | **total_quantity_sold** | **total_orders** | **total_customers** | **avg_selling_price** | **avg_order_revenue** | **avg_monthly_revenue** |
-  | --------------- | ---------------------- | ------------ | --------------- | -------- | ------------ | -------------- | ----------- | --------------- | --------------- | ----------------------- | ---------------- | ------------------- | --------------------- | --------------------- | ----------------------- |
-  | **3**           | Mountain-100 Black- 38 | Bikes        | Mountain Bikes  | 1898     | 11           | 2011-12-27     | 165         | Mid-Range       | 165375          | 49                      | 49               | 49                  | 3375                  | 3375                  | 15034                   |
-  | **4**           | Mountain-100 Black- 42 | Bikes        | Mountain Bikes  | 1898     | 11           | 2011-12-27     | 165         | Mid-Range       | 151875          | 45                      | 45               | 45                  | 3375                  | 3375                  | 13806                   |
 
 These reports demonstrate how the warehouse delivers actionable insights on **customer behavior** and **product performance** directly from SQL-based analytics.
 
