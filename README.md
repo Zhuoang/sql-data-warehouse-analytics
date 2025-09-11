@@ -181,7 +181,7 @@ data-warehouse-project/
 │   ├── 01_quality_checks_silver.sql    # Validations for Silver layer data
 │   └── 02_quality_checks_gold.sql      # Validations for Gold layer data
 │
-├── README.md                           # Project overview and instructions
+├── .gitignore                          # Files and directories to ignore in Git
 ├── LICENSE                             # License information
-└── .gitignore                          # Files and directories to ignore in Git
+└── README.md                           # Project overview and instructions
 ```
